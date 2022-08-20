@@ -1,21 +1,56 @@
 {
-  "name": "i-schedule",
-  "version": "1.0.0",
-  "description": "a simple node scheduler",
-  "main": "dist/schedule.js",
-  "types": "src/schedule.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "_from": "i-schedule",
+  "_id": "i-schedule@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-3+DpQ5WXP+iWOF13Cus9O/9r6AiJZE5yhqXPIQSq84uUlHl7LrIC3+VKuijAXjsZ3Uei9KNJTeVElygpFYDFag==",
+  "_location": "/i-schedule",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "i-schedule",
+    "name": "i-schedule",
+    "escapedName": "i-schedule",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/i-schedule/-/i-schedule-1.0.1.tgz",
+  "_shasum": "22f71541ca448a9d2cac582e562fea808d74fa37",
+  "_spec": "i-schedule",
+  "_where": "E:\\nodejs\\tmpTest",
+  "author": {
+    "name": "ahuang"
+  },
+  "bugs": {
+    "url": "https://github.com/ahuangege/i-schedule/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "a simple node scheduler",
+  "devDependencies": {
+    "@types/node": "^18.7.8"
+  },
+  "homepage": "https://github.com/ahuangege/i-schedule#readme",
   "keywords": [
     "cron",
     "schedule"
   ],
-  "author": "ahuang",
   "license": "MIT",
+  "main": "dist/schedule.js",
+  "name": "i-schedule",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahuangege/i-schedule.git"
+    "url": "git+https://github.com/ahuangege/i-schedule.git"
   },
-  "dependencies": {}
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "src/schedule.ts",
+  "version": "1.0.1"
 }
