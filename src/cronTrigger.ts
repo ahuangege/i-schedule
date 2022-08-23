@@ -254,7 +254,11 @@ function timeMatch(value: number, cronTime: timeV) {
         if (value < cronTime[0] || value > cronTime[cronTime.length - 1]) {
             return false;
         }
-        return cronTime.includes(value);
+        if (cronTime.indexOf(value) === -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 

@@ -1,18 +1,16 @@
 const TimePer: number = 20 * 24 * 3600 * 1000;      // 不可大于int32
 
-export function setTimeoutPro(callback: (...args: any[]) => void, ms: number, ...args: any[]): TimeoutPro {
-    return new TimeoutPro(callback, ms, ...args)
+export function setTimeoutPro(callback: () => void, ms: number): TimeoutPro {
+    return new TimeoutPro(callback, ms)
 }
 
 export class TimeoutPro {
-    private callback: (...args: any[]) => void;
+    private callback: () => void;
     private ms: number;
-    private args: any[];
     private timer: any = null as any;
-    constructor(callback: (...args: any[]) => void, ms: number, ...args: any[]) {
+    constructor(callback: () => void, ms: number,) {
         this.callback = callback;
         this.ms = ms;
-        this.args = args;
         this.nextTime();
     }
 
@@ -29,7 +27,7 @@ export class TimeoutPro {
 
     private func() {
         if (this.ms === 0) {
-            this.callback(...this.args);
+            this.callback();
         } else {
             this.nextTime();
         }

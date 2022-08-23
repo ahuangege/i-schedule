@@ -48,3 +48,7 @@ The cron format consists of:
 cron string `" 1-3 2/3 1,2 * * * "`  means:  
 `1-3` represents `1,2,3`  
 `2/3` represents `2,5,8...`
+
+# Recommended point
+
+You can control the schedule inner time by `schedule.setTime()`,
