@@ -83,14 +83,14 @@ class Schedule {
         }
         let job = this.queue.peek();
         if (job) {
-            this.timer = setTimeoutPro(this.excuteJob.bind(this), job.time - this.getTime());
+            this.timer = setTimeoutPro(this.excuteJob.bind(this), job.time - this.getTime() + 50);  // 50ms later
         }
     }
 
     private excuteJob() {
         let queue = this.queue;
         let job = queue.peek();
-        while (job && job.time <= this.getTime() + 100) { // 100ms accuracy
+        while (job && job.time <= this.getTime()) {
             queue.dequeue();
             job.excute();
 

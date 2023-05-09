@@ -8,6 +8,9 @@ export class SimpleTrigger implements I_trigger {
 
     constructor(timeType: e_timeType, timeout: number) {
         this.timeType = timeType;
+        if (this.timeType == e_timeType.interval && timeout < 10) {
+            timeout = 10;
+        }
         this.timeout = timeout;
         this.time = schedule.getTime() + timeout;
     }
