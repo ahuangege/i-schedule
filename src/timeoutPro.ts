@@ -6,27 +6,24 @@ export function setTimeoutPro(callback: () => void, ms: number): TimeoutPro {
 
 export class TimeoutPro {
     private callback: () => void;
-    private ms: number;
-    private timer: any = null as any;
+    private time: number;
+    private timeout: any = null as any;
     constructor(callback: () => void, ms: number,) {
         this.callback = callback;
-        this.ms = ms;
+        this.time = Date.now() + ms;
         this.nextTime();
     }
 
     private nextTime() {
-        let delay = this.ms;
-        if (this.ms > TimePer) {
+        let delay = this.time - Date.now();
+        if (delay > TimePer) {
             delay = TimePer;
-            this.ms -= TimePer;
-        } else {
-            this.ms = 0;
         }
-        this.timer = setTimeout(this.func.bind(this), delay);
+        this.timeout = setTimeout(this.func.bind(this), delay);
     }
 
     private func() {
-        if (this.ms === 0) {
+        if (Date.now() >= this.time) {
             this.callback();
         } else {
             this.nextTime();
@@ -37,7 +34,7 @@ export class TimeoutPro {
      * 停止计时器
      */
     stop() {
-        clearTimeout(this.timer);
-        this.timer = null as any;
+        clearTimeout(this.timeout);
+        this.timeout = null as any;
     }
 }
