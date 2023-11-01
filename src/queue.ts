@@ -33,14 +33,20 @@ export class Queue {
         }
         this.arr[index] = this.arr[this.arr.length - 1];
         this.arr.pop();
-        this.move_down(index);
+
+        const parentIdx = Math.floor((index - 1) / 2);
+        if (this.arr[index] && this.arr[parentIdx] && this.arr[index].time < this.arr[parentIdx].time) {
+            this.move_up(index);
+        } else {
+            this.move_down(index);
+        }
     }
 
 
     private move_up(idx: number) {
         let parentIdx = Math.floor((idx - 1) / 2);
         while (0 <= parentIdx) {
-            if (this.arr[idx].time > this.arr[parentIdx].time) {
+            if (this.arr[idx].time >= this.arr[parentIdx].time) {
                 break;
             }
             let tmp = this.arr[idx]

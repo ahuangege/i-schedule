@@ -115,6 +115,7 @@ export class CronTrigger implements I_trigger {
         }
 
         this.time = date.getTime();
+        console.log("---------nexttime---", new Date(this.time).toLocaleString())
         return this.time;
     }
 
